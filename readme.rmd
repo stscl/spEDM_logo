@@ -14,24 +14,24 @@ knitr::opts_chunk$set(echo = TRUE,
 ```
 
 ```r
-library(ggplot2)
 set.seed(123)
-fig1 = ggplot(data.frame(x = rnorm(5e5),y = rnorm(5e5)), 
-              aes(x = x, y = y)) +
-  geom_hex(bins = 30, show.legend = F) +
-  scale_fill_gradient(low = "#212d2c", high = "#ffffff") + 
-  coord_fixed() + 
-  theme_void() +
-  theme(
-    plot.background = element_rect(fill = "transparent", color = "transparent"),
-    panel.background = element_rect(fill = "transparent", color = "transparent")
+fig1 = ggplot2::ggplot(data.frame(x = rnorm(5e5),y = rnorm(5e5)), 
+                       ggplot2::aes(x = x, y = y)) +
+  ggplot2::geom_hex(bins = 30, show.legend = F) +
+  ggplot2::scale_fill_gradient(low = "#212d2c", high = "#ffffff") + 
+  ggplot2::coord_fixed() + 
+  ggplot2::theme_void() +
+  ggplot2::theme(
+    plot.background = ggplot2::element_rect(fill = "transparent", 
+                                            color = "transparent"),
+    panel.background = ggplot2::element_rect(fill = "transparent", 
+                                             color = "transparent")
   ) +
   ggview::canvas(width = 600, height = 550, units = 'px')
 ggview::save_ggplot(fig1,'./bg.png',dpi = 100, bg = 'transparent')
 
 ccm = figpatch::fig('./CCM1.png')
 ccm = ggimage::ggbackground(ccm, './bg.png')
-  
 ggplot2::ggsave("./ccm_binding.png", ccm,
                 width = 3.25, height = 3.25, 
                 dpi = 100)
