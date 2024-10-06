@@ -18,7 +18,7 @@ ggview::save_ggplot(fig1,'./bg.png',dpi = 100, bg = 'transparent')
 ccm = figpatch::fig('./CCM1.png')
 ccm = ggimage::ggbackground(ccm, './bg.png')
   
-ggplot2::ggsave('./ccm_brick1.png',ccm,
+ggplot2::ggsave("./ccm_binding.png", ccm,
                 width = 3.25, height = 3.25, 
                 dpi = 100)
 
@@ -29,7 +29,7 @@ library(hexSticker)
 library(magick)
 
 sticker(
-  subplot = "./ccm_brick1.png",
+  subplot = "./ccm_binding.png",
   s_x = 0.995,
   s_y = 0.920,
   s_width = .6,
@@ -38,16 +38,16 @@ sticker(
   p_family = "ShineTypewriter",
   p_size = 18.5,
   p_x = 1.00,
-  p_y = 1.58,
-  p_color = ggplot2::alpha("#a9fdff",1),
+  p_y = 1.525,
+  p_color = "#a9fdff",
   dpi = 300,
   asp = 1,
   h_size = 2.55,
-  h_color = ggplot2::alpha("#24e2be",.75),
-  h_fill = ggplot2::alpha("#212d2c",.75),
+  h_color = "#24e2be",
+  h_fill = "#212d2c",
   white_around_sticker = F,
   url = "https://stscl.github.io/spEDM",
-  u_color = ggplot2::alpha("#a9fdff",.75),
+  u_color = "#a9fdff",
   u_size = 5.25,
   filename = "spEDM_logo.png"
 )
