@@ -53,7 +53,7 @@ sticker(
 )
 
 image_read('./spEDM_logo.png') |> 
-  image_resize("256x256")|> 
+  image_resize("240x278")|> 
   image_write('./spEDM_logo.png')
 ```
 
