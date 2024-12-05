@@ -42,7 +42,7 @@ sticker(
   p_color = "#a9fdff",
   dpi = 300,
   asp = 1,
-  h_size = 2.55,
+  h_size = 1.86,
   h_color = "#24e2be",
   h_fill = "#212d2c",
   white_around_sticker = F,
