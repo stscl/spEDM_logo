@@ -60,4 +60,4 @@ image_read('./spEDM_logo.png') |>
 ![](./spEDM_logo.png)
 
 **Special thanks to [my girlfriend](https://github.com/layeyo) for her
-invaluable help in designing the core EDM figure.**
+invaluable help to designing the central EDM figure.**
