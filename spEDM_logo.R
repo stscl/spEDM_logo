@@ -16,7 +16,7 @@ fig1 = ggplot2::ggplot(data.frame(x = rnorm(5e5),y = rnorm(5e5)),
   ggview::canvas(width = 600, height = 550, units = 'px')
 ggview::save_ggplot(fig1,'./bg.png',dpi = 100, bg = 'transparent')
 
-ccm = figpatch::fig('./CCM1.png')
+ccm = figpatch::fig('./CCM2.png')
 ccm = ggimage::ggbackground(ccm, './bg.png')
 ggplot2::ggsave("./ccm_binding.png", ccm,
                 width = 3.25, height = 3.25, 
