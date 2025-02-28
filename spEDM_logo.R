@@ -1,35 +1,13 @@
-# setwd('../../Downloads/materials/spEDM_logo/')
-
-set.seed(123)
-fig1 = ggplot2::ggplot(data.frame(x = rnorm(5e5),y = rnorm(5e5)), 
-                       ggplot2::aes(x = x, y = y)) +
-  ggplot2::geom_hex(bins = 30, show.legend = F) +
-  ggplot2::scale_fill_gradient(low = "#212d2c", high = "#ffffff") + 
-  ggplot2::coord_fixed() + 
-  ggplot2::theme_void() +
-  ggplot2::theme(
-    plot.background = ggplot2::element_rect(fill = "transparent", 
-                                            color = "transparent"),
-    panel.background = ggplot2::element_rect(fill = "transparent", 
-                                             color = "transparent")
-  ) +
-  ggview::canvas(width = 600, height = 550, units = 'px')
-ggview::save_ggplot(fig1,'./bg.png',dpi = 100, bg = 'transparent')
-
-ccm = figpatch::fig('./MCM1.png')
-ccm = ggimage::ggbackground(ccm, './bg.png')
-ggplot2::ggsave("./mcm_binding.png", ccm,
-                width = 3.25, height = 3.25, 
-                dpi = 100)
-
 library(showtext)
 showtext_auto(enable = TRUE)
 font_add("ShineTypewriter", regular = "./ShineTypewriter-lgwzd.ttf")
 library(hexSticker)
 library(magick)
 
+set.seed(42)
+
 sticker(
-  subplot = "./mcm_binding.png",
+  subplot = "./MCM.png",
   s_x = 0.995,
   s_y = 0.920,
   s_width = .6,
@@ -45,6 +23,12 @@ sticker(
   h_size = 2.25,
   h_color = "#24e2be",
   h_fill = "#212d2c",
+  spotlight = TRUE,
+  l_x = 0.955,
+  l_y = 0.810,
+  l_width = 4.25,
+  l_height = 1.55,
+  l_alpha = 0.95,
   white_around_sticker = F,
   url = "https://stscl.github.io/spEDM",
   u_color = "#a9fdff",

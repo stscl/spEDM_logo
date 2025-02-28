@@ -1,10 +1,10 @@
+# setwd('../../Downloads/materials/spEDM_logo/')
 
-``` r
 set.seed(123)
-fig1 = ggplot2::ggplot(data.frame(x = rnorm(5e5),y = rnorm(5e5)), 
+fig1 = ggplot2::ggplot(data.frame(x = rnorm(6e5),y = rnorm(6e5)), 
                        ggplot2::aes(x = x, y = y)) +
   ggplot2::geom_hex(bins = 30, show.legend = F) +
-  ggplot2::scale_fill_gradient(low = "#212d2c", high = "#ffffff") + 
+  ggplot2::scale_fill_gradient(low = "#212d2c", high = "#ffffffd0") + 
   ggplot2::coord_fixed() + 
   ggplot2::theme_void() +
   ggplot2::theme(
@@ -16,9 +16,9 @@ fig1 = ggplot2::ggplot(data.frame(x = rnorm(5e5),y = rnorm(5e5)),
   ggview::canvas(width = 600, height = 550, units = 'px')
 ggview::save_ggplot(fig1,'./bg.png',dpi = 100, bg = 'transparent')
 
-ccm = figpatch::fig('./MCM1.png')
-ccm = ggimage::ggbackground(ccm, './bg.png')
-ggplot2::ggsave("./mcm_binding.png", ccm,
+ccm = figpatch::fig('./MCM.png')
+ccm = ggimage::ggbackground(ccm, './figure/bg.png')
+ggplot2::ggsave("./figure/mcm_binding.png", ccm,
                 width = 3.25, height = 3.25, 
                 dpi = 100)
 
@@ -29,7 +29,7 @@ library(hexSticker)
 library(magick)
 
 sticker(
-  subplot = "./mcm_binding.png",
+  subplot = "./figure/mcm_binding.png",
   s_x = 0.995,
   s_y = 0.920,
   s_width = .6,
@@ -55,9 +55,3 @@ sticker(
 image_read('./spEDM_logo.png') |> 
   image_resize("240x278")|> 
   image_write('./spEDM_logo.png')
-```
-
-![](./spEDM_logo.png)
-
-**Special thanks to [my girlfriend](https://github.com/layeyo) for her
-invaluable help to designing the central EDM figure.**
