@@ -1,4 +1,4 @@
-cu = terra::rast(system.file("extdata/cu.tif", package = "spEDM"))
+cu = terra::rast("./cu.tif")
 
 m1 = spEDM::embedded(cu,"industry",E = 9,tau = 0,trend.rm = FALSE)
 m2 = spEDM::embedded(cu,"cu",E = 9,tau = 0,trend.rm = FALSE)
